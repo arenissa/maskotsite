@@ -1,0 +1,16 @@
+{
+  "name": "red-square-mascot-landing",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Интерактивный одностраничный сайт нового маскота RED SQUARE с процедурной 3D-моделью на WebGL.",
+  "scripts": {
+    "dev": "node scripts/server.mjs",
+    "start": "node scripts/server.mjs",
+    "build": "node scripts/build.mjs",
+    "preview": "node scripts/server.mjs --dir=dist",
+    "test": "node --test tests/*.test.mjs",
+    "export:model": "node scripts/export-glb.mjs"
+  },
+  "engines": {"node": ">=18"}
+}

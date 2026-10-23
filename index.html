@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#f0f0f0" />
+  <meta name="description" content="Знакомьтесь с Квадратным напарником RED SQUARE: история персонажа, общение и фирменный мерч." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Квадратный напарник RED SQUARE — характер в каждой грани" />
+  <meta property="og:description" content="Интерактивное знакомство с Квадратным напарником RED SQUARE." />
+  <meta property="og:image" content="assets/mascot-fallback.webp" />
+  <meta name="color-scheme" content="light dark" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <title>Квадратный напарник RED SQUARE — интерактивное знакомство</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script type="module" src="js/main.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#merch">Перейти к мерчу</a>
+  <header class="site-header" id="siteHeader">
+    <a class="nav-brand" href="#top" aria-label="RED SQUARE — на первый экран">
+      <img src="assets/red-square-logo-transparent.png" alt="RED SQUARE" width="252" height="163" />
+    </a>
+    <nav class="header-nav" aria-label="Основная навигация">
+      <a class="nav-link" href="#story" data-stage="0.72">История</a>
+      <a class="nav-link" href="#merch">Мерч <span class="nav-link-arrow" aria-hidden="true">↗</span></a>
+    </nav>
+    <a class="header-external" href="https://red-square.org/" target="_blank" rel="noopener noreferrer" aria-label="Официальный сайт RED SQUARE (открыть в новой вкладке)">
+      <span class="header-external-label">Официальный сайт</span>
+      <svg aria-hidden="true" viewBox="0 0 24 24" fill="none"><path d="M5 19 19 5M7 5h12v12" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </header>
+
+  <main id="top">
+    <section class="journey" id="journey" aria-label="Знакомство с Квадратным напарником RED SQUARE">
+      <div class="journey-sticky" id="journeySticky">
+        <div class="studio-backdrop" aria-hidden="true"><div class="studio-glow"></div><div class="studio-grid"></div></div>
+        <div class="scene-label scene-label-left" aria-hidden="true">RED SQUARE / КВАДРАТНЫЙ НАПАРНИК</div>
+        <div class="scene-label scene-label-right" aria-hidden="true">01 — 03</div>
+
+        <div class="intro-mark" id="introMark" aria-label="Квадратный напарник">
+          <span class="intro-label">ПРЕДСТАВЛЯЕМ</span>
+          <img src="assets/red-square-logo-transparent.png" alt="Фирменный логотип RED SQUARE" width="370" height="247" />
+          <span class="intro-subtitle">У КАЖДОГО БРЕНДА ЕСТЬ ХАРАКТЕР.</span>
+        </div>
+
+        <div class="mascot-stage" id="mascotStage" aria-label="Квадратный напарник RED SQUARE — объёмный интерактивный красный куб с выразительным лицом, руками и ногами">
+          <canvas id="mascotCanvas" aria-label="3D-маскот, поворачивающийся при прокрутке"></canvas>
+          <div class="mascot-shadow" aria-hidden="true"></div>
+          <div class="mascot-fallback" id="mascotFallback" role="img" aria-label="Фотография Квадратного напарника RED SQUARE">
+            <img src="assets/mascot-fallback.webp" alt="" />
+          </div>
+        </div>
+
+        <div class="hero-copy" id="heroCopy">
+          <div class="section-kicker"><span class="kicker-square" aria-hidden="true"></span> КВАДРАТНЫЙ НАПАРНИК RED SQUARE</div>
+          <h1>ХАРАКТЕР.<br /><em>В КАЖДОЙ</em><br />ГРАНИ.</h1>
+          <p class="hero-deck">Красный снаружи.<br />С характером внутри.</p>
+        </div>
+
+        <div class="rotation-hint" id="rotationHint" aria-hidden="true">
+          <span class="hint-ring">↻</span><span>Листай. Смотри<br />со всех сторон.</span>
+        </div>
+
+        <div class="speech-card story-card" id="storyCard" aria-live="off">
+          <div class="speech-eyebrow"><span class="tiny-dot"></span> ОТ ПЕРВОГО ЛИЦА <span class="speech-number">01 / 01</span></div>
+          <p class="speech-heading" id="storyHeadline">Привет! Я — твой Квадратный напарник.</p>
+          <p class="story-sub" id="storySub">Листай дальше, и ты узнаешь, как я стал тем, кто я есть.</p>
+          <span class="speech-tail" aria-hidden="true"></span>
+        </div>
+
+        <div class="scroll-cue" id="scrollCue" aria-hidden="true"><span>ЛИСТАЙ ВНИЗ</span><span class="scroll-track"><i></i></span></div>
+        <div class="timeline" aria-hidden="true"><div class="timeline-track"><div class="timeline-fill" id="timelineFill"></div></div><span class="timeline-label" id="timelinePercent">00</span></div>
+        <p class="stage-caption" id="stageCaption" aria-live="off">01 / ПРИВЕТСТВИЕ</p>
+      </div>
+    </section>
+
+    <section class="story-video-section" id="storyVideo" aria-labelledby="storyVideoTitle">
+      <div class="video-ambient" aria-hidden="true"></div>
+      <div class="section-shell">
+        <div class="video-heading reveal">
+          <p class="section-kicker kicker-light"><span class="kicker-square" aria-hidden="true"></span> ИСТОРИЯ ПЕРСОНАЖА / ВИДЕО</p>
+          <h2 id="storyVideoTitle">КВАДРАТНЫЙ <span>НАПАРНИК</span><span class="heading-dot">.</span></h2>
+          <p class="video-subtitle">История пробуждения!</p>
+        </div>
+        <figure class="video-frame reveal">
+          <div class="video-screen">
+            <video id="storyVideoPlayer" class="story-video" src="assets/video/mascot-story.mp4" loop playsinline preload="none"></video>
+            <button class="video-play-overlay" type="button" id="storyVideoToggle" aria-label="Смотреть видео: история Квадратного напарника">
+              <span class="play-badge" aria-hidden="true">▶</span>
+              <span class="play-label">СМОТРЕТЬ ИСТОРИЮ</span>
+            </button>
+            <div class="video-badge" aria-hidden="true">RED SQUARE / 00:16</div>
+          </div>
+        </figure>
+      </div>
+    </section>
+
+
+    
+
+    <section id="merch" class="merch-section" aria-labelledby="merchTitle">
+      <div class="merch-ambient" aria-hidden="true"></div>
+      <div class="section-shell">
+        <div class="merch-header">
+          <div class="merch-heading-block reveal">
+            <p class="section-kicker kicker-light"><span class="kicker-square" aria-hidden="true"></span> КОЛЛЕКЦИЯ ПЕРСОНАЖА / 03</p>
+            <h2 id="merchTitle">МЕРЧ <span>RED SQUARE</span><span class="heading-dot">.</span></h2>
+            <p class="merch-subtitle">Коллекция маскота. Выбери своё.</p>
+          </div>
+          <div class="merch-nav reveal" aria-label="Управление каруселью">
+            <span class="slide-count"><strong id="carouselCount">01</strong> <span>/ <b id="carouselTotal">10</b></span></span>
+            <button class="arrow-btn" type="button" id="carouselPrev" aria-label="Предыдущая карточка">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14.5 5-7 7 7 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <button class="arrow-btn" type="button" id="carouselNext" aria-label="Следующая карточка">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9.5 5 7 7-7 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="carousel-area" id="carouselArea" aria-label="Горизонтальная карусель мерча">
+          <div class="merch-track" id="merchTrack" role="region" tabindex="0" aria-roledescription="карусель" aria-label="Мерч Квадратного напарника; стрелки влево и вправо для перелистывания">
+            <!-- Карточки создаются из js/config.js. Фотографии намеренно отсутствуют. -->
+          </div>
+        </div>
+        <div class="carousel-footer reveal"><p><span class="drag-icon" aria-hidden="true">↔</span> ТЯНИ, ЛИСТАЙ, ИССЛЕДУЙ</p><div class="carousel-dots" id="carouselDots" aria-label="Переключение карточек"></div></div>
+
+        <div class="order-bar reveal" id="orderBar">
+          <div class="order-summary">
+            <span class="cart-ico" aria-hidden="true">🛒</span>
+            <span>В корзине: <strong id="cartCount">0</strong> шт.</span>
+            <span class="order-total" id="cartTotal">на 0 ₽</span>
+          </div>
+          <button class="order-btn" type="button" id="orderOpen" disabled>Заказать</button>
+        </div>
+      </div>
+    </section>
+
+    <div class="modal-overlay lightbox-overlay" id="lightbox" hidden aria-label="Просмотр фотографии товара">
+      <button class="lightbox-nav lightbox-prev" type="button" id="lightboxPrev" aria-label="Предыдущее фото">‹</button>
+      <figure class="lightbox-card">
+        <button class="modal-close" type="button" id="lightboxClose" aria-label="Закрыть просмотр">✕</button>
+        <img class="lightbox-img" src="" alt="" />
+        <figcaption class="lightbox-caption"><span class="lightbox-title"></span><span class="lightbox-count"></span></figcaption>
+        <div class="lightbox-hint">Клавиши ← → листают, Esc закрывает</div>
+      </figure>
+      <button class="lightbox-nav lightbox-next" type="button" id="lightboxNext" aria-label="Следующее фото">›</button>
+    </div>
+
+    <div class="modal-overlay" id="orderModal" hidden aria-labelledby="orderTitle">
+      <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="orderTitle">
+        <button class="modal-close" type="button" id="orderClose" aria-label="Закрыть форму">✕</button>
+        <div id="orderFormPane">
+          <h3 id="orderTitle">Оформление заказа</h3>
+          <ul class="order-items" id="orderItems" aria-label="Состав заказа"></ul>
+          <p class="manager-note">Количество и размеры можно обсудить с менеджером — он позвонит вам для подтверждения заказа.</p>
+          <form id="orderForm" novalidate>
+            <label class="field">
+              <span>Ваше имя</span>
+              <input type="text" name="name" id="orderName" autocomplete="name" required minlength="2" placeholder="Как к вам обращаться?">
+            </label>
+            <label class="field">
+              <span>Телефон</span>
+              <input type="tel" name="phone" id="orderPhone" autocomplete="tel" required pattern="[0-9+()\- ]{7,}" placeholder="+7 900 000-00-00">
+            </label>
+            <p class="form-error" id="orderError" hidden>Пожалуйста, укажите имя и корректный телефон.</p>
+            <button class="order-btn order-btn-wide" type="submit" id="orderSubmit">Подтвердить заказ</button>
+            <p class="form-note">Нажимая «Подтвердить заказ», вы соглашаетесь с обработкой персональных данных.</p>
+          </form>
+        </div>
+        <div id="orderSuccessPane" hidden>
+          <div class="success-mark" aria-hidden="true">✓</div>
+          <h3>Заказ принят!</h3>
+          <p class="success-text">Ожидайте звонка — мы свяжемся с вами для подтверждения заказа.</p>
+          <button class="order-btn order-btn-wide" type="button" id="orderDone">Отлично!</button>
+        </div>
+      </div>
+    </div>
+    </main>
+
+  <footer class="site-footer">
+    <div class="footer-mark"><span class="footer-diamond" aria-hidden="true"></span><span>RED SQUARE</span></div>
+    <span>ГЕРОЙ В КАЖДОЙ ГРАНИ.</span>
+    <a href="https://red-square.org/" target="_blank" rel="noopener noreferrer">red-square.org <span aria-hidden="true">↗</span></a>
+  </footer>
+
+  <noscript><style>.reveal{opacity:1;transform:none}</style><div class="noscript">Для работы интерактивного маскота и карусели необходимо включить JavaScript. <a href="https://red-square.org/">Официальный сайт RED SQUARE</a>.</div></noscript>
+</body>
+</html>
